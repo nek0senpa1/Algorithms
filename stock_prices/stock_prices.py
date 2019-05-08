@@ -2,7 +2,7 @@
 
 # import argparse
 
-testy = [200, 1050, 270, 1540, 3800, 650, 27809]
+testy = [200, 1050, 10, 270, 1540, 3800, 650, 17, 27809, 5]
 
 
 def find_max_profit(prices):
@@ -21,12 +21,10 @@ def find_max_profit(prices):
       holder = prices[i+1]
       widget = i+1
 
-    
-
-      # if prices[i] < prices[i+1]:
-      #   low = prices[i]
-      #   print('finding lowest:', low)
-      #   widget += widget
+    for j in range(0, prices[i]):
+      
+      if low > prices[i]:
+        low = prices[i]
 
   diff = holder - low
 
