@@ -2,7 +2,7 @@
 
 # import argparse
 
-testy = [200, 1050, 10, 270, 1540, 3800, 650, 17, 27809, 5]
+testy = [100, 90, 80, 50, 20, 10,400,999,350,4,6,7]
 
 
 def find_max_profit(prices):
@@ -21,16 +21,16 @@ def find_max_profit(prices):
       holder = prices[i+1]
       widget = i+1
 
-    for j in range(0, prices[i]):
-      
-      if low > prices[i]:
-        low = prices[i]
+      for j in range(0, i):
+        print('find lowest:', low)
+        if low > prices[j]:
+          low = prices[j]
 
-  diff = holder - low
+          diff = holder - low
 
   return diff
 
-
+print('andsworz', find_max_profit(testy))
 
 # if __name__ == '__main__':
 #   # This is just some code to accept inputs from the command line
@@ -40,4 +40,3 @@ def find_max_profit(prices):
 
 #   print("A profit of ${profit} can be made from the stock prices {prices}.".format(profit=find_max_profit(args.integers), prices=args.integers))
 
-print('andsworz', find_max_profit(testy))
