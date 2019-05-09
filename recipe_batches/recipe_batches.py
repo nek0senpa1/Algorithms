@@ -9,18 +9,31 @@ ingredientos = {
   'flour': 15
 }
 
+recipeos = {
+  'eggs': 1,
+  'butter': 2,
+  'sugar': 4,
+  'flour': 6
+}
+
 def recipe_batches(recipe, ingredients):
   # print(ingredients.items())
   # print(recipe['butter'])
-  store = {
-    'eggs': 0,
-    'butter': 0,
-    'sugar': 0,
-    'flour': 0
-  }
+  smallest = None
 
-  for i in ingredients:
-    i =
+  for key in recipe:
+    if key not in ingredients:
+      return 0
+
+    result = ingredients[key] // recipe[key]
+
+    if result == 0:
+      return 0
+
+    elif smallest is None or result < smallest:
+      smallest = result
+  
+  return smallest
   
 
 
@@ -31,13 +44,6 @@ def recipe_batches(recipe, ingredients):
 #   ingredients = { 'milk': 132, 'butter': 48, 'flour': 51 }
 #   print("{batches} batches can be made from the available ingredients: {ingredients}.".format(batches=recipe_batches(recipe, ingredients), ingredients=ingredients))
 
-
-recipeos = {
-  'eggs': 1,
-  'butter': 2,
-  'sugar': 4,
-  'flour': 6
-}
 
 
 print(recipe_batches(recipeos,ingredientos))
